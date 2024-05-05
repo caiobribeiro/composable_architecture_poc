@@ -12,28 +12,75 @@ import Foundation
 struct CounterFeature {
     @ObservableState
     struct State {
-        var counter = 0
+        var count = 0
+        var fact: String?
         var divided = 0.0
+        var isLoading = false
+        var isTimerRunning = false
     }
-
+  
     enum Action {
-        case decrement
-        case increment
-        case divide
+        case decrementButtonTapped
+        case factButtonTapped
+        case factResponse(String)
+        case incrementButtonTapped
+        case divideByFourButtonTapped
+        case toggleTimerButtonTapped
+        case timerTick
     }
-
+  
+    enum CancelID { case timer }
+    
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .decrement:
-                state.counter -= 1
+            case .decrementButtonTapped:
+                state.count -= 1
+                state.fact = nil
                 return .none
-            case .increment:
-                state.counter += 1
+        
+            case .factButtonTapped:
+                state.fact = nil
+                state.isLoading = true
+                return .run { [count = state.count] send in
+                    let (data, _) = try await URLSession.shared
+                        .data(from: URL(string: "http://numbersapi.com/\(count)")!)
+                    let fact = String(decoding: data, as: UTF8.self)
+                    await send(.factResponse(fact))
+                }
+        
+            case let .factResponse(fact):
+                state.fact = fact
+                state.isLoading = false
                 return .none
-            case .divide:
-                state.divided = Double(state.counter) / 3
+        
+            case .incrementButtonTapped:
+                state.count += 1
+                state.fact = nil
                 return .none
+            
+            case .divideByFourButtonTapped:
+                state.divided = Double(state.count) / 3
+                return .none
+                
+            case .timerTick:
+                state.count += 1
+                state.fact = nil
+                return .none
+                
+            case .toggleTimerButtonTapped:
+                state.isTimerRunning.toggle()
+                if state.isTimerRunning {
+                    return .run { send in
+                        while true {
+                            try await Task.sleep(for: .seconds(1))
+                            await send(.timerTick)
+                        }
+                    }
+                    .cancellable(id: "Bruh")
+                } else {
+                    return .cancel(id: "Bruh")
+                }
             }
         }
     }

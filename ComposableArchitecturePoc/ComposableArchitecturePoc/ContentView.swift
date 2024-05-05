@@ -14,43 +14,66 @@ struct ContentView: View {
     var body: some View {
         let formattedNumber = String(format: "%.2f", store.divided)
         VStack {
-            Text("counter \(store.counter)")
-                .font(.system(size: 60))
-            Text("divided \(formattedNumber)")
-                .font(.system(size: 60))
-
+            Text("Counter \(store.count)")
+                .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
+            Text("Divided \(formattedNumber)")
+                .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
             HStack {
-                Button {
-                    store.send(.decrement)
-                } label: {
-                    Text("-")
-                        .frame(width: 100, height: 100)
+                Button("-") {
+                    store.send(.decrementButtonTapped)
                 }
-                .foregroundColor(.white)
-                .background(.blue)
                 .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
 
-                Button {
-                    store.send(.increment)
-                } label: {
-                    Text("+")
-                        .frame(width: 100, height: 100)
+                Button("+") {
+                    store.send(.incrementButtonTapped)
                 }
-                .foregroundColor(.white)
-                .background(.blue)
                 .font(.largeTitle)
+                .padding()
+                .background(Color.black.opacity(0.1))
+                .cornerRadius(10)
             }
-            Button {
-                store.send(.divide)
-            } label: {
-                Text("\(store.counter) / 3")
-                    .frame(width: 100, height: 100)
+            Button("\(store.count) / 4") {
+                store.send(.divideByFourButtonTapped)
             }
-            .foregroundColor(.white)
-            .background(.blue)
             .font(.largeTitle)
+            .padding()
+            .background(Color.black.opacity(0.1))
+            .cornerRadius(10)
         }
+
+        Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
+            store.send(.toggleTimerButtonTapped)
+        }
+        .font(.largeTitle)
         .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+
+        Button("Fact") {
+            store.send(.factButtonTapped)
+        }
+        .font(.largeTitle)
+        .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+
+        if store.isLoading {
+            ProgressView()
+        } else if let fact = store.fact {
+            Text(fact)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .padding()
+        }
     }
 }
 

@@ -47,6 +47,7 @@
 		A9BFCF3A2BE3C31A0014D2AA /* ComposableArchitecturePocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitecturePocUITests.swift; sourceTree = "<group>"; };
 		A9BFCF3C2BE3C31A0014D2AA /* ComposableArchitecturePocUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitecturePocUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
+		A9BFCF4E2BE429250014D2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		A9BFCF1E2BE3C3190014D2AA /* ComposableArchitecturePoc */ = {
 			isa = PBXGroup;
 			children = (
+				A9BFCF4E2BE429250014D2AA /* Info.plist */,
 				A9BFCF1F2BE3C3190014D2AA /* ComposableArchitecturePocApp.swift */,
 				A9BFCF212BE3C3190014D2AA /* ContentView.swift */,
 				A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */,
@@ -437,8 +439,7 @@
 				DEVELOPMENT_TEAM = HT553M937L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_FILE = ComposableArchitecturePoc/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -466,8 +467,7 @@
 				DEVELOPMENT_TEAM = HT553M937L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_FILE = ComposableArchitecturePoc/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
