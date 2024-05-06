@@ -16,6 +16,9 @@
 		A9BFCF3D2BE3C31A0014D2AA /* ComposableArchitecturePocUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCF3C2BE3C31A0014D2AA /* ComposableArchitecturePocUITestsLaunchTests.swift */; };
 		A9BFCF4B2BE3C7F50014D2AA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A9BFCF4A2BE3C7F50014D2AA /* ComposableArchitecture */; };
 		A9BFCF4D2BE3C90D0014D2AA /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */; };
+		A9D222A72BE7BFA200611351 /* CounterFeatureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D222A62BE7BFA200611351 /* CounterFeatureTest.swift */; };
+		A9D222AA2BE9759500611351 /* NumberFactClientDependecy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D222A82BE957FC00611351 /* NumberFactClientDependecy.swift */; };
+		A9D222AD2BE9783100611351 /* NumberFactClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D222AC2BE9783100611351 /* NumberFactClientTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		A9BFCF3C2BE3C31A0014D2AA /* ComposableArchitecturePocUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitecturePocUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		A9BFCF4E2BE429250014D2AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A9D222A62BE7BFA200611351 /* CounterFeatureTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTest.swift; sourceTree = "<group>"; };
+		A9D222A82BE957FC00611351 /* NumberFactClientDependecy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClientDependecy.swift; sourceTree = "<group>"; };
+		A9D222AC2BE9783100611351 /* NumberFactClientTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClientTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		A9BFCF1E2BE3C3190014D2AA /* ComposableArchitecturePoc */ = {
 			isa = PBXGroup;
 			children = (
+				A9D222AB2BE9777200611351 /* Dependecies */,
 				A9BFCF4E2BE429250014D2AA /* Info.plist */,
 				A9BFCF1F2BE3C3190014D2AA /* ComposableArchitecturePocApp.swift */,
 				A9BFCF212BE3C3190014D2AA /* ContentView.swift */,
@@ -121,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				A9BFCF302BE3C31A0014D2AA /* ComposableArchitecturePocTests.swift */,
+				A9D222A62BE7BFA200611351 /* CounterFeatureTest.swift */,
+				A9D222AC2BE9783100611351 /* NumberFactClientTest.swift */,
 			);
 			path = ComposableArchitecturePocTests;
 			sourceTree = "<group>";
@@ -132,6 +141,14 @@
 				A9BFCF3C2BE3C31A0014D2AA /* ComposableArchitecturePocUITestsLaunchTests.swift */,
 			);
 			path = ComposableArchitecturePocUITests;
+			sourceTree = "<group>";
+		};
+		A9D222AB2BE9777200611351 /* Dependecies */ = {
+			isa = PBXGroup;
+			children = (
+				A9D222A82BE957FC00611351 /* NumberFactClientDependecy.swift */,
+			);
+			path = Dependecies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +290,7 @@
 				A9BFCF4D2BE3C90D0014D2AA /* CounterFeature.swift in Sources */,
 				A9BFCF222BE3C3190014D2AA /* ContentView.swift in Sources */,
 				A9BFCF202BE3C3190014D2AA /* ComposableArchitecturePocApp.swift in Sources */,
+				A9D222AA2BE9759500611351 /* NumberFactClientDependecy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BFCF312BE3C31A0014D2AA /* ComposableArchitecturePocTests.swift in Sources */,
+				A9D222A72BE7BFA200611351 /* CounterFeatureTest.swift in Sources */,
+				A9D222AD2BE9783100611351 /* NumberFactClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
