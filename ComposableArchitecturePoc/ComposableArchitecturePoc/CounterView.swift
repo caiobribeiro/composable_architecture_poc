@@ -8,7 +8,7 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ContentView: View {
+struct CounterView: View {
     let store: StoreOf<CounterFeature>
 
     var body: some View {
@@ -19,11 +19,7 @@ struct ContentView: View {
                 .padding()
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(10)
-            Text("Divided \(formattedNumber)")
-                .font(.largeTitle)
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(10)
+
             HStack {
                 Button("-") {
                     store.send(.decrementButtonTapped)
@@ -41,44 +37,52 @@ struct ContentView: View {
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(10)
             }
-            Button("\(store.count) / 4") {
-                store.send(.divideByFourButtonTapped)
+            HStack {
+                Button("\(store.count) / 4 = ") {
+                    store.send(.divideByFourButtonTapped)
+                }
+                Text("\(formattedNumber)")
+                    .font(.largeTitle)
+                    .padding()
+                    .background(Color.black.opacity(0.1))
+                    .cornerRadius(10)
+            }
+
+            .font(.largeTitle)
+            .padding()
+            .background(Color.black.opacity(0.1))
+            .cornerRadius(10)
+
+            Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
+                store.send(.toggleTimerButtonTapped)
             }
             .font(.largeTitle)
             .padding()
             .background(Color.black.opacity(0.1))
             .cornerRadius(10)
-        }
 
-        Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
-            store.send(.toggleTimerButtonTapped)
-        }
-        .font(.largeTitle)
-        .padding()
-        .background(Color.black.opacity(0.1))
-        .cornerRadius(10)
+            Button("Fact") {
+                store.send(.factButtonTapped)
+            }
+            .font(.largeTitle)
+            .padding()
+            .background(Color.black.opacity(0.1))
+            .cornerRadius(10)
 
-        Button("Fact") {
-            store.send(.factButtonTapped)
-        }
-        .font(.largeTitle)
-        .padding()
-        .background(Color.black.opacity(0.1))
-        .cornerRadius(10)
-
-        if store.isLoading {
-            ProgressView()
-        } else if let fact = store.fact {
-            Text(fact)
-                .font(.largeTitle)
-                .multilineTextAlignment(.center)
-                .padding()
+            if store.isLoading {
+                ProgressView()
+            } else if let fact = store.fact {
+                Text(fact)
+                    .font(.largeTitle)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
         }
     }
 }
 
 #Preview {
-    ContentView(
+    CounterView(
         store: Store(initialState: CounterFeature.State()) {
             CounterFeature()
                 ._printChanges()

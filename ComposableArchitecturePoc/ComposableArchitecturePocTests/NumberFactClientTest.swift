@@ -10,7 +10,7 @@ import XCTest
 
 @testable import ComposableArchitecturePoc
 
-@MainActor
+// @MainActor
 final class NumberFactClientTest: XCTestCase {
     func testCounter() async {
         let store = TestStore(initialState: CounterFeature.State()) {

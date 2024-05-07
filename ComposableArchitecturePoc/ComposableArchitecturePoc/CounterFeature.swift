@@ -59,7 +59,7 @@ struct CounterFeature {
                 return .none
             
             case .divideByFourButtonTapped:
-                state.divided = Double(state.count) / 3
+                state.divided = Double(state.count) / 4
                 return .none
                 
             case .timerTick:
