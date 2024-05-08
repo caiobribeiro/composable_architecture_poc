@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A96D6DC72BEBADA4003DDA0F /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */; };
+		A96D6DC92BEBAE3B003DDA0F /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */; };
 		A9BFCF202BE3C3190014D2AA /* ComposableArchitecturePocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCF1F2BE3C3190014D2AA /* ComposableArchitecturePocApp.swift */; };
 		A9BFCF222BE3C3190014D2AA /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BFCF212BE3C3190014D2AA /* CounterView.swift */; };
 		A9BFCF242BE3C31A0014D2AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BFCF232BE3C31A0014D2AA /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
+		A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A9BFCF1C2BE3C3190014D2AA /* ComposableArchitecturePoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableArchitecturePoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BFCF1F2BE3C3190014D2AA /* ComposableArchitecturePocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitecturePocApp.swift; sourceTree = "<group>"; };
 		A9BFCF212BE3C3190014D2AA /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				A9D222AE2BEA5F1300611351 /* AppFeature.swift */,
 				A9BFCF212BE3C3190014D2AA /* CounterView.swift */,
 				A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */,
+				A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */,
+				A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */,
 				A9BFCF232BE3C31A0014D2AA /* Assets.xcassets */,
 				A9BFCF252BE3C31A0014D2AA /* Preview Content */,
 			);
@@ -298,6 +304,8 @@
 				A9BFCF222BE3C3190014D2AA /* CounterView.swift in Sources */,
 				A9BFCF202BE3C3190014D2AA /* ComposableArchitecturePocApp.swift in Sources */,
 				A9D222AA2BE9759500611351 /* NumberFactClientDependecy.swift in Sources */,
+				A96D6DC72BEBADA4003DDA0F /* AddContactFeature.swift in Sources */,
+				A96D6DC92BEBAE3B003DDA0F /* ContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
