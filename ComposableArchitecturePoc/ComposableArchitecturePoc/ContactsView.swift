@@ -14,30 +14,8 @@ struct Contact: Equatable, Identifiable {
     var name: String
 }
 
-@Reducer
-struct ContactsFeature {
-    @ObservableState
-    struct State: Equatable {
-        var contacts: IdentifiedArrayOf<Contact> = []
-    }
-
-    enum Action {
-        case addButtonTapped
-    }
-
-    var body: some ReducerOf<Self> {
-        Reduce { _, action in
-            switch action {
-            case .addButtonTapped:
-                // TODO: Handle action
-                return .none
-            }
-        }
-    }
-}
-
 struct ContactsView: View {
-    let store: StoreOf<ContactsFeature>
+    @Bindable var store: StoreOf<ContactsFeature>
 
     var body: some View {
         NavigationStack {
@@ -55,6 +33,13 @@ struct ContactsView: View {
                         Image(systemName: "plus")
                     }
                 }
+            }
+        }
+        .sheet(
+            item: $store.scope(state: \.addContact, action: \.addContact)
+        ) { addContactStore in
+            NavigationStack {
+                AddContactView(store: addContactStore)
             }
         }
     }

@@ -38,6 +38,7 @@ struct AppView: View {
 //    let store1: StoreOf<CounterFeature>
 //    let store2: StoreOf<CounterFeature>
     let store: StoreOf<AppFeature>
+    let storeContact: StoreOf<ContactsFeature>
 
     var body: some View {
         TabView {
@@ -50,6 +51,11 @@ struct AppView: View {
                 .tabItem {
                     Text("Counter 2")
                 }
+
+            ContactsView(store: storeContact)
+                .tabItem {
+                    Text("Contact Feature")
+                }
         }
     }
 }
@@ -58,5 +64,15 @@ struct AppView: View {
     AppView(store: Store(initialState: AppFeature.State()) {
         AppFeature()
             ._printChanges()
+    }, storeContact: Store(
+        initialState: ContactsFeature.State(
+            contacts: [
+                Contact(id: UUID(), name: "Blob"),
+                Contact(id: UUID(), name: "Blob Jr"),
+                Contact(id: UUID(), name: "Blob Sr"),
+            ]
+        )
+    ) {
+        ContactsFeature()
     })
 }

@@ -10,13 +10,17 @@ import SwiftUI
 
 @main
 struct ComposableArchitecturePocApp: App {
-    static let store = Store(initialState: AppFeature.State()) {
+    static let storeCounter = Store(initialState: AppFeature.State()) {
         AppFeature()
+    }
+
+    static let storeContact = Store(initialState: ContactsFeature.State()) {
+        ContactsFeature()
     }
 
     var body: some Scene {
         WindowGroup {
-            AppView(store: ComposableArchitecturePocApp.store)
+            AppView(store: ComposableArchitecturePocApp.storeCounter, storeContact: ComposableArchitecturePocApp.storeContact)
         }
     }
 }
