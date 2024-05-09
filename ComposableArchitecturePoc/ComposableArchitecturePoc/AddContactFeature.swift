@@ -34,8 +34,11 @@ struct AddContactFeature {
                 return .run { _ in await self.dismiss() }
 
             case .saveButtonTapped:
+                print("entrei add contact feature")
                 return .run { [contact = state.contact] send in
+                    print("0")
                     await send(.delegate(.saveContact(contact)))
+                    print("1")
                     await self.dismiss()
                 }
 
