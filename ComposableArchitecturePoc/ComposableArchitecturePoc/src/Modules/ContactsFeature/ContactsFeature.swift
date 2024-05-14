@@ -23,6 +23,7 @@ struct ContactsFeature {
         //        @Presents var addContact: AddContactFeature.State?
         //        @Presents var alert: AlertState<Action.Alert>?
         @Presents var destination: Destination.State?
+        var path = StackState<ContactDetailFeature.State>()
         var contacts: IdentifiedArrayOf<Contact> = []
     }
     
@@ -32,10 +33,13 @@ struct ContactsFeature {
         case destination(PresentationAction<Destination.Action>)
         case addButtonTapped
         case deleteButtonTapped(id: Contact.ID)
+        case path(StackAction<ContactDetailFeature.State, ContactDetailFeature.Action>)
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
         }
     }
+    
+    @Dependency(\.uuid) var uuid
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -43,7 +47,7 @@ struct ContactsFeature {
             case .addButtonTapped:
                 state.destination = .addContact(
                     AddContactFeature.State(
-                        contact: Contact(id: UUID(), name: "")
+                        contact: Contact(id: self.uuid(), name: "")
                     )
                 )
                 return .none
@@ -71,8 +75,14 @@ struct ContactsFeature {
                     }
                 )
                 return .none
+
+            case .path:
+                return .none
             }
         }
         .ifLet(\.$destination, action: \.destination)
+        .forEach(\.path, action: \.path) {
+            ContactDetailFeature()
+        }
     }
 }

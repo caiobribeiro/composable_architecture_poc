@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A96447C22BF2405E000A9CCB /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96447C12BF2405E000A9CCB /* ContactsFeatureTests.swift */; };
+		A96447C82BF27C35000A9CCB /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96447C72BF27C35000A9CCB /* ContactDetailFeature.swift */; };
 		A96D6DC72BEBADA4003DDA0F /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */; };
 		A96D6DC92BEBAE3B003DDA0F /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */; };
 		A96D6DCB2BEBFC96003DDA0F /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96D6DCA2BEBFC96003DDA0F /* ContactsFeature.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A96447C12BF2405E000A9CCB /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
+		A96447C72BF27C35000A9CCB /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
 		A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A96D6DCA2BEBFC96003DDA0F /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
@@ -92,6 +96,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A96447C32BF27BC6000A9CCB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A96447C42BF27BD5000A9CCB /* CounterFeature */,
+				A96447C52BF27BDC000A9CCB /* ContactsFeature */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A96447C42BF27BD5000A9CCB /* CounterFeature */ = {
+			isa = PBXGroup;
+			children = (
+				A9BFCF212BE3C3190014D2AA /* CounterView.swift */,
+				A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */,
+			);
+			path = CounterFeature;
+			sourceTree = "<group>";
+		};
+		A96447C52BF27BDC000A9CCB /* ContactsFeature */ = {
+			isa = PBXGroup;
+			children = (
+				A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */,
+				A96D6DCA2BEBFC96003DDA0F /* ContactsFeature.swift */,
+				A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */,
+				A96447C72BF27C35000A9CCB /* ContactDetailFeature.swift */,
+			);
+			path = ContactsFeature;
+			sourceTree = "<group>";
+		};
+		A96447C62BF27C0D000A9CCB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A9D222AB2BE9777200611351 /* Dependecies */,
+				A96447C32BF27BC6000A9CCB /* Modules */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		A9BFCF132BE3C3190014D2AA = {
 			isa = PBXGroup;
 			children = (
@@ -115,16 +157,11 @@
 		A9BFCF1E2BE3C3190014D2AA /* ComposableArchitecturePoc */ = {
 			isa = PBXGroup;
 			children = (
-				A9D222AB2BE9777200611351 /* Dependecies */,
 				A9BFCF4E2BE429250014D2AA /* Info.plist */,
+				A9BFCF232BE3C31A0014D2AA /* Assets.xcassets */,
 				A9BFCF1F2BE3C3190014D2AA /* ComposableArchitecturePocApp.swift */,
 				A9D222AE2BEA5F1300611351 /* AppFeature.swift */,
-				A9BFCF212BE3C3190014D2AA /* CounterView.swift */,
-				A9BFCF4C2BE3C90D0014D2AA /* CounterFeature.swift */,
-				A96D6DC82BEBAE3B003DDA0F /* ContactsView.swift */,
-				A96D6DCA2BEBFC96003DDA0F /* ContactsFeature.swift */,
-				A96D6DC62BEBADA4003DDA0F /* AddContactFeature.swift */,
-				A9BFCF232BE3C31A0014D2AA /* Assets.xcassets */,
+				A96447C62BF27C0D000A9CCB /* src */,
 				A9BFCF252BE3C31A0014D2AA /* Preview Content */,
 			);
 			path = ComposableArchitecturePoc;
@@ -145,6 +182,7 @@
 				A9D222A62BE7BFA200611351 /* CounterFeatureTest.swift */,
 				A9D222AC2BE9783100611351 /* NumberFactClientTest.swift */,
 				A9D222B02BEA8DDC00611351 /* AppFeatureTest.swift */,
+				A96447C12BF2405E000A9CCB /* ContactsFeatureTests.swift */,
 			);
 			path = ComposableArchitecturePocTests;
 			sourceTree = "<group>";
@@ -306,6 +344,7 @@
 				A9D222AF2BEA5F1300611351 /* AppFeature.swift in Sources */,
 				A9BFCF222BE3C3190014D2AA /* CounterView.swift in Sources */,
 				A96D6DCB2BEBFC96003DDA0F /* ContactsFeature.swift in Sources */,
+				A96447C82BF27C35000A9CCB /* ContactDetailFeature.swift in Sources */,
 				A9BFCF202BE3C3190014D2AA /* ComposableArchitecturePocApp.swift in Sources */,
 				A9D222AA2BE9759500611351 /* NumberFactClientDependecy.swift in Sources */,
 				A96D6DC72BEBADA4003DDA0F /* AddContactFeature.swift in Sources */,
@@ -320,6 +359,7 @@
 				A9D222B12BEA8DDC00611351 /* AppFeatureTest.swift in Sources */,
 				A9BFCF312BE3C31A0014D2AA /* ComposableArchitecturePocTests.swift in Sources */,
 				A9D222A72BE7BFA200611351 /* CounterFeatureTest.swift in Sources */,
+				A96447C22BF2405E000A9CCB /* ContactsFeatureTests.swift in Sources */,
 				A9D222AD2BE9783100611351 /* NumberFactClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
